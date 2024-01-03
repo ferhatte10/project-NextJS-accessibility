@@ -79,3 +79,31 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+
+
+
+/* Base style for the NavigationMenuLink */
+.NavigationMenuLink {
+  /* Your regular styles for the link */
+  text-decoration: none; /* Remove default underline */
+  position: relative; /* Establish positioning context for the pseudo-element */
+  color: #333; /* Change to your desired text color */
+}
+
+/* Style for the underline animation */
+.NavigationMenuLink::after {
+  content: ''; /* Create the pseudo-element */
+  position: absolute; /* Position it absolutely within the link */
+  bottom: -3px; /* Adjust the distance of the underline from the text */
+  left: 0;
+  width: 0; /* Initially, the underline has zero width */
+  height: 2px; /* Set the height/thickness of the underline */
+  background-color: #f0f0f0; /* Change to your desired underline color */
+  transition: width 0.3s ease; /* Transition effect for the width */
+}
+
+/* Style for the "active" class */
+.NavigationMenuLink.active::after {
+  width: 100%; /* Expand the underline to full width on active */
+}

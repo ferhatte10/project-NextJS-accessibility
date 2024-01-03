@@ -4,11 +4,12 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
+import Router from 'next/router'
 
 const LoginForm = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Logic for handling form submission goes here
+  const handleJoinNowClick = () => {
+
+    Router.push('/hello-nextjs')
   };
 
   return (
@@ -18,7 +19,7 @@ const LoginForm = () => {
         <CardDescription>Welcome Back !</CardDescription>
       </CardHeader>
       <CardContent>
-        <form>
+        <form method='post'>
           <div className="flex flex-col space-y-4">
             <div>
               <Label htmlFor="email">Email</Label>
@@ -30,7 +31,7 @@ const LoginForm = () => {
               />
             </div>
             <div>
-              <Label htmlFor="password">Password</Label>
+              <Label onClick={handleJoinNowClick} htmlFor="password">Password</Label>
               <Input
                 id="password"
                 type="password"
@@ -39,14 +40,14 @@ const LoginForm = () => {
               />
             </div>
           </div>
-          <Button type="submit" className="mt-4 w-full">
+          <Button  onClick={handleJoinNowClick}  className="mt-4 w-full">
           Join Now
           </Button>
         </form>
       </CardContent>
       <CardFooter className="flex justify-center">
         <p className="text-sm text-muted-foreground">
-          Don't have an account? <a href="/signup">Sign Up</a>
+          Do not have an account? <a href="/signup">Sign Up</a>
         </p>
       </CardFooter>
     </Card>
