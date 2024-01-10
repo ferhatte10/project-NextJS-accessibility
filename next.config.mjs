@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    appDir: true,
-    esmExternals: false,
+  distDir: 'dist',
 
-  },
+  // experimental: {
+  //   appDir: true,
+  //   //esmExternals: false,
+
+  // },
 }
 
 export default nextConfig

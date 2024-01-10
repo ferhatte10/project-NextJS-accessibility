@@ -128,13 +128,25 @@ export const Icons = {
       <path d="M21 12a9 9 0 1 1-6.219-8.56" />
     </svg>
   ),
-  quiteSmoking:(props: IconProps) => (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path d="M1 1L27 27M14 14H1V19.2H19.2M27 14V19.2M21.8 14H21.15M7.5 14V19.2M21.8 8.8C21.8 5.55 19.2 5.55 19.2 2.3M27 8.8C27 5.55 24.4 5.55 24.4 2.3" stroke="black" strokeWidth="2"  />
+  quiteSmoking: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      className="mb-3 h-6 w-6"
+      {...props}
+    >
+      <line x1="1" y1="1" x2="23" y2="23" />
+      <line x1="1" y1="23" x2="23" y2="1" />
+      <rect x="1" y="7" width="6" height="14" />
+      <rect x="17" y="7" width="6" height="14" />
     </svg>
-
-
   ),
+
   relieveStress:(props: IconProps) => (
     <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -156,23 +168,21 @@ export const Icons = {
 
 
   ),
-  improveSleep:(props: IconProps) => (
+  improveSleep: (props: IconProps) => (
     <svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  strokeLinecap="round"
-  strokeLinejoin="round"
-  strokeWidth="2"
-  className="mb-3 h-6 w-6"
-  {...props}
->
-  <path d="M18 12a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v5z" />
-  <line x1="8" y1="9" x2="16" y2="9" />
-  <line x1="8" y1="13" x2="14" y2="13" />
-</svg>
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+    className="mb-3 h-6 w-6"
+    {...props}
+  >
+    <circle cx="12" cy="12" r="10" />
+    <path d="M9 12a3 3 0 0 1 6 0M9 12v.01M15 12v.01" />
+  </svg>
+  ),
 
-
-  )
 }
