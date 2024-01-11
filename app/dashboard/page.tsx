@@ -33,51 +33,10 @@ const HelloWorldPage = () => {
     <Separator />
 
     <div className="flex justify-between  gap-3">
-      <Cardy title="Quit Smoking" href="/dashboard/quit-smoking" icon={<Icons.quitSmoking className="mb-3 h-6 w-6" />} />
-      <Cardy title="Relieve<br />Stress" href="/dashboard/quit-smoking" icon={<Icons.relieveStress className="mb-3 h-6 w-6" />} />
-      <Cardy title="Improve<br />Sleep" href="/dashboard/quit-smoking" icon={<Icons.improveSleep className="mb-3 h-6 w-6" />} />
+      <Cardy title="Quit<br/>Smoking" href="/dashboard/quit-smoking" icon={<Icons.quitSmoking className="mb-3 h-6 w-6" />} />
+      <Cardy title="Relieve<br/>Stress" href="/dashboard/quit-smoking" icon={<Icons.relieveStress className="mb-3 h-6 w-6" />} />
+      <Cardy title="Improve<br/>Sleep" href="/dashboard/quit-smoking" icon={<Icons.improveSleep className="mb-3 h-6 w-6" />} />
     </div>
-    <RadioGroup defaultValue="QuitSmoking" className="grid grid-cols-3 gap-4">
-          <div>
-            <RadioGroupItem aria-label="Quit Smoking" value="QuitSmoking" id="QuitSmoking" className="peer sr-only" />
-            <Label
-              htmlFor="QuitSmoking"
-              aria-label="Quit Smoking"
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4  text-center hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
-            >
-
-              <Icons.quitSmoking className="mb-3 h-6 w-6" />
-              Quit<br/>Smoking
-            </Label>
-          </div>
-          <div>
-            <RadioGroupItem
-              value="RelieveStress"
-              aria-label="Relieve Stress"
-              id="RelieveStress"
-              className="peer sr-only"
-            />
-            <Label
-              htmlFor="RelieveStress"
-              aria-label="Relieve Stress"
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 text-center hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
-            >
-              <Icons.relieveStress className="mb-3 h-6 w-6" />
-              Relieve<br/>Stress
-            </Label>
-          </div>
-          <div>
-            <RadioGroupItem value="ImproveSleep" id="ImproveSleep" aria-label="Improve Sleep" className="peer sr-only" />
-            <Label
-              htmlFor="ImproveSleep"
-              aria-label="Improve Sleep"
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 text-center hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
-            >
-              <Icons.improveSleep className="mb-3 h-6 w-6" />
-              Improve<br/>Sleep
-            </Label>
-          </div>
-        </RadioGroup>
 
 
   </section>

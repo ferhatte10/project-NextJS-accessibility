@@ -1,10 +1,7 @@
 // pages/hello.tsx
 'use client'
-import { Icons } from '@/components/icons';
 import  {DataTableDemo} from '@/components/specials/TableDataSet';
 import { Separator } from '@/components/ui/separator';
-import { Button } from '@/components/ui/button';
-import { RadioGroup, RadioGroupItem } from '@radix-ui/react-radio-group';
 import {
   Accordion,
   AccordionContent,
@@ -14,9 +11,9 @@ import {
 
 import React from 'react';
 
-import CustomRadioGroup from '@/components/forms/RadioGroup';
 import Image from 'next/image';
 import Link from 'next/link';
+import PdfViewer from '@/components/specials/PdfViewer';
 
 const ArticlePage = () => {
   return (
@@ -26,7 +23,7 @@ const ArticlePage = () => {
         <Image
           width={200}
           height={200}
-          alt="Absolutely no smoking"
+          alt="Absolutely no smoking."
           className="mb-8 w-full rounded-lg sm:mb-0 sm:ml-4 sm:w-1/2 dark:contrast-200"
           src="/no-smoke.jpeg"
           tabIndex={0}
@@ -61,7 +58,7 @@ const ArticlePage = () => {
           <Image
             width={200}
             height={340}
-            alt="Absolutely no smoking"
+            alt="Absolutely no smoking.."
             className="mb-8 h-64 w-full rounded-lg object-cover dark:contrast-200"
             src="/smoking-intro.jpeg"
             tabIndex={0}
@@ -89,7 +86,7 @@ const ArticlePage = () => {
         <Image
           width={200}
           height={200}
-          alt="Absolutely no smoking"
+          alt="Absolutely no smoking..."
           className="mb-8 w-full h-full rounded-lg object-cover sm:mb-0 sm:ml-4 sm:w-1/2 dark:contrast-200"
           src="/no-smoke.jpeg"
           tabIndex={0}
@@ -106,7 +103,7 @@ const ArticlePage = () => {
           </p>
 
           <ol className="list-decimal" aria-describedby="preparationTitle">
-            <li tabIndex={0}>Set a Quit Date: Choose a specific date to quit smoking; it's a commitment and a starting point for your journey.</li>
+            <li tabIndex={0}>Set a Quit Date: Choose a specific date to quit smoking; it&apos;s a commitment and a starting point for your journey.</li>
             <li tabIndex={0}>Identify Triggers and Habits: Recognize situations, emotions, or routines that prompt smoking behavior; understand these triggers to devise strategies.</li>
             <li tabIndex={0}>Build a Support System: Seek support from family, friends, or join support groups; having understanding and encouraging people makes a significant difference.</li>
             <li tabIndex={0}>Seek Professional Guidance: Consult a healthcare provider or counselor for valuable insights and personalized strategies; it helps navigate the challenging phase effectively.</li>
@@ -157,11 +154,15 @@ const ArticlePage = () => {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-
       </section>
 
+      <section>
+        <PdfViewer pdfUrl='/essai-abir.pdf'></PdfViewer>
+      </section>
 
-
+      <section>
+        {/* <TextareaForm /> */}
+      </section>
 
       <section>
         <DataTableDemo />

@@ -1,58 +1,27 @@
-// PdfViewer.tsx
-import React, { useRef, useState } from 'react';
-import { Worker, Viewer } from '@react-pdf-viewer/core';
-import { pdfjs } from 'react-pdf';
-import { usePdf } from '@react-pdf-viewer';
+// components/PdfIframe.tsx
+import Link from 'next/link';
+import React from 'react';
 
-interface PdfViewerProps {
+interface PdfIframeProps {
   pdfUrl: string;
 }
 
-const PdfViewer: React.FC<PdfViewerProps> = ({ pdfUrl }) => {
-  const { pdfDocument } = usePdf({ fileUrl: pdfUrl });
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
-
-  const playAudio = () => {
-    setIsPlaying(true);
-    const utterance = new SpeechSynthesisUtterance();
-    utterance.text = `Page ${currentPage}. ${pdfDocument?.getPage(currentPage).getTextContent()}`;
-    utterance.lang = 'en-US';
-    utterance.rate = 1;
-    utterance.onend = () => {
-      setIsPlaying(false);
-    };
-    speechSynthesis.speak(utterance);
-  };
-
-  const stopAudio = () => {
-    speechSynthesis.cancel();
-    setIsPlaying(false);
-  };
-
-  const handlePageChange = (pageIndex: number) => {
-    setCurrentPage(pageIndex + 1);
-    if (isPlaying) {
-      stopAudio();
-      playAudio();
-    }
-  };
-
+const PdfIframe: React.FC<PdfIframeProps> = ({ pdfUrl }) => {
   return (
-    <div>
-      <button onClick={playAudio} disabled={isPlaying}>
-        Play Audio
-      </button>
-      <button onClick={stopAudio} disabled={!isPlaying}>
-        Stop Audio
-      </button>
-      <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`}>
-        <Viewer fileUrl={pdfUrl} onPageChange={handlePageChange} />
-      </Worker>
-      <audio ref={audioRef}></audio>
+    <div className='flex flex-col content-center'>
+      <iframe src={pdfUrl} title="Embedded PDF" width="100%" height="600px" className='rounded-lg'></iframe>
+
+      <Link
+        className="my-2 inline-block rounded-lg border-0 bg-pink-700 px-12 py-2 text-center text-base text-white transition hover:bg-pink-800"
+        href={pdfUrl} target="_blank"
+        title="Open PDF document in a new tab"
+
+      >
+            Open in a new tab
+          </Link>
+
     </div>
   );
 };
 
-export default PdfViewer;
+export default PdfIframe;
