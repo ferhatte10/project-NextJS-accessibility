@@ -207,7 +207,7 @@ export const columns: ColumnDef<Payment>[] = [
         aria-label={`Status: ${row.getValue("status")}`}
         tabIndex={0}
 
-          className={`capitalize inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+          className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium capitalize ${
             status === "success"
               ? "bg-green-100 text-green-800"
               : status === "processing"
@@ -329,12 +329,14 @@ export function DataTableDemo() {
   return (
     <div className="w-full" aria-label="Payments Table">
       <div className="flex items-center py-4">
-        <Label
-              htmlFor="emailFilter"
-              className="flex flex-col "
-            >
+              <Label
+                htmlFor="emailFilter"
+                className="flex flex-col pr-3"
+              >
               Filter Email :
-              <Input
+
+            </Label>
+            <Input
           placeholder="Filter emails..."
           value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
@@ -343,7 +345,6 @@ export function DataTableDemo() {
           className="max-w-sm"
           id="emailFilter"
         />
-            </Label>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

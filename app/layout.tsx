@@ -31,7 +31,7 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  const hideMenu = true;
+
 
 
 
@@ -46,11 +46,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex min-h-screen flex-col">
-            {!hideMenu && <SiteHeader />}
+            <main className="relative flex min-h-screen flex-col">
+               {children}
+            </main>
 
-              <div className="flex-1">{children}</div>
-            </div>
+            <footer className="text-center">
+            <p tabIndex={0}>Copyright Redeemers Zakaria_Abir_Ferhat, 2024.</p>
+          </footer>
             <TailwindIndicator />
           </ThemeProvider>
         </body>

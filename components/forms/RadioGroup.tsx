@@ -8,7 +8,7 @@ const YourComponent: React.FC = () => {
       id: 'QuitSmoking',
       value: 'QuitSmoking',
       label: 'Quit Smoking',
-      Icon: Icons.quiteSmoking,
+      Icon: Icons.quitSmoking,
     },
     {
       id: 'RelieveStress',

@@ -16,6 +16,9 @@ import { Link } from 'lucide-react';
 import React from 'react';
 
 
+import Cardy from '@/components/specials/Card'
+
+
 const HelloWorldPage = () => {
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
@@ -28,6 +31,12 @@ const HelloWorldPage = () => {
       </p>
     </div>
     <Separator />
+
+    <div className="flex justify-between  gap-3">
+      <Cardy title="Quit Smoking" href="/dashboard/quit-smoking" icon={<Icons.quitSmoking className="mb-3 h-6 w-6" />} />
+      <Cardy title="Relieve<br />Stress" href="/dashboard/quit-smoking" icon={<Icons.relieveStress className="mb-3 h-6 w-6" />} />
+      <Cardy title="Improve<br />Sleep" href="/dashboard/quit-smoking" icon={<Icons.improveSleep className="mb-3 h-6 w-6" />} />
+    </div>
     <RadioGroup defaultValue="QuitSmoking" className="grid grid-cols-3 gap-4">
           <div>
             <RadioGroupItem aria-label="Quit Smoking" value="QuitSmoking" id="QuitSmoking" className="peer sr-only" />
@@ -37,7 +46,7 @@ const HelloWorldPage = () => {
               className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4  text-center hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
             >
 
-              <Icons.quiteSmoking className="mb-3 h-6 w-6" />
+              <Icons.quitSmoking className="mb-3 h-6 w-6" />
               Quit<br/>Smoking
             </Label>
           </div>

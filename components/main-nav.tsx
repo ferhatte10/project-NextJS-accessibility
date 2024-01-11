@@ -37,9 +37,10 @@ export function MainNav({ items }: MainNavProps) {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] list-none">
+                    <ul role="menu" className="grid w-[400px] list-none gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {item.subItems.map((subItem, subIndex) => (
                         <ListItem
+                          role="menuitem"
                           key={subIndex}
                           title={subItem.title}
                           href={subItem.href}

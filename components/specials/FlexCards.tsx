@@ -28,7 +28,7 @@ const FlexCards: React.FC = () => {
   return (
     <div className="wrapper flexCards">
     <div className="w-100 flex-nowrap justify-start md:flex  md:gap-3">
-    <div aria-labelledby="c1" className="card active relative" id="c1" role="button" tabIndex={0} aria-expanded="false">
+    <div aria-labelledby="c1" className="card active relative" id="c1" tabIndex={0} aria-expanded="false">
       <Image
         src="/no-smoke.jpeg"
         alt="Winter Image"

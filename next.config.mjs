@@ -8,6 +8,7 @@ const nextConfig = {
   //   //esmExternals: false,
 
   // },
+
 }
 
 export default nextConfig
