@@ -56,7 +56,7 @@ const FlexCards: React.FC = () => {
         className="absolute inset-0 z-0 rounded-lg" // Fills the entire container
       />
       <div className='overlay'></div>
-      <div className="row relative  bg-black w-100">
+      <div className="row w-100  relative bg-black">
         <div className="icon m-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-white">2</div>
         <div className="description flex flex-col overflow-hidden opacity-0 transition-all duration-300">
           <h4 className="mt-4 text-xl font-semibold">Winter</h4>

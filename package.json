@@ -45,6 +45,7 @@
     "react-day-picker": "^8.10.0",
     "react-direction": "^1.0.4",
     "react-dom": "^18.2.0",
+    "react-grid-system": "^8.1.9",
     "react-hook-form": "^7.49.3",
     "sharp": "^0.31.3",
     "tailwind-merge": "^1.13.2",
