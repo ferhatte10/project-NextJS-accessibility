@@ -4,22 +4,22 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
-import Router from 'next/router'
 
 const LoginForm = () => {
-  const handleJoinNowClick = () => {
 
-    Router.push('/hello-nextjs')
+
+  const handleJoinNowClick = (e:any) => {
+
   };
 
   return (
     <Card className="w-[400px]">
       <CardHeader className='text-center'>
-        <CardTitle>Login</CardTitle>
-        <CardDescription>Welcome Back !</CardDescription>
+        <CardTitle aria-describedby='wlc-back' tabIndex={0}>Login</CardTitle>
+        <CardDescription id="wlc-back">Welcome Back !</CardDescription>
       </CardHeader>
       <CardContent>
-        <form method='post'>
+        <form action="/dashboard" method='post'>
           <div className="flex flex-col space-y-4">
             <div>
               <Label htmlFor="email">Email</Label>
@@ -31,7 +31,7 @@ const LoginForm = () => {
               />
             </div>
             <div>
-              <Label onClick={handleJoinNowClick} htmlFor="password">Password</Label>
+              <Label htmlFor="password">Password</Label>
               <Input
                 id="password"
                 type="password"
@@ -40,7 +40,7 @@ const LoginForm = () => {
               />
             </div>
           </div>
-          <Button  onClick={handleJoinNowClick}  className="mt-4 w-full">
+          <Button  className="mt-4 w-full">
           Join Now
           </Button>
         </form>

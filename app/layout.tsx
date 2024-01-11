@@ -46,11 +46,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <main className="relative flex min-h-screen flex-col">
+            <main role="main" className="relative flex min-h-screen flex-col">
                {children}
             </main>
 
-            <footer className="text-center">
+            <footer role="contentinfo" className="text-center">
             <p tabIndex={0}>Copyright Redeemers Zakaria_Abir_Ferhat, 2024.</p>
           </footer>
             <TailwindIndicator />

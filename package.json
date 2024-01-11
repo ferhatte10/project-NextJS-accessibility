@@ -43,6 +43,7 @@
     "react-day-picker": "^8.10.0",
     "react-direction": "^1.0.4",
     "react-dom": "^18.2.0",
+    "react-grid-system": "^8.1.9",
     "react-hook-form": "^7.49.3",
     "react-pdf": "^7.7.0",
     "sharp": "^0.31.3",

@@ -1,28 +1,34 @@
-// pages/hello.tsx
-'use client'
 import  {DataTableDemo} from '@/components/specials/TableDataSet';
-import { Separator } from '@/components/ui/separator';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 
 import React from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import PdfViewer from '@/components/specials/PdfViewer';
 
+import { Metadata } from "next";
+import AccordionCustom from '@/components/specials/AccordionFer';
+
+
+export const metadata: Metadata = {
+  title: {
+    default: "Quick Tips to remedy solitude",
+    template: `%s - steel`,
+  },
+  description: "Solitude can have a big impact on our lifestyle",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+}
 const ArticlePage = () => {
   return (
     <article className="container">
 
       <section className="flex flex-col items-center py-20 sm:flex-row-reverse ">
         <Image
-          width={200}
-          height={200}
+          width={500}
+          height={500}
           alt="A path leading through a metaphorical journey of loneliness to social connection."
           className="mb-8 w-full rounded-lg sm:mb-0 sm:ml-4 sm:w-1/2 dark:contrast-200"
           src="/path-leading.jpeg"
@@ -41,7 +47,8 @@ const ArticlePage = () => {
           </p>
           <Link
             className=" inline-block rounded-lg border-0 bg-pink-700 px-12 py-2 text-base text-white transition hover:bg-pink-800"
-            href="#call-action"
+            href="/login"
+            title="Reach out for more details"
           >
             Reach Out
           </Link>
@@ -57,8 +64,8 @@ const ArticlePage = () => {
                       </p>
         </div>
         <Image
-          width={200}
-          height={200}
+          width={500}
+          height={500}
           alt="Diagram illustrating the attachment theory and its impact on mental well-being."
           className="mb-8 h-full w-full rounded-lg object-cover sm:mb-0 sm:ml-4 sm:w-1/2 dark:contrast-200"
           src="/impact-mental.jpeg"
@@ -67,7 +74,7 @@ const ArticlePage = () => {
         </section>
       <section className="container grid items-center gap-6 pt-6 md:py-10">
         <div className="flex flex-col items-start gap-2">
-          <h2 className="mb-4 text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl" tabIndex={0}>Impactful Experiences :</h2>
+          <h2  id="cTitle" className="mb-4 text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl" tabIndex={0}>Impactful Experiences :</h2>
           <p className="text-lg text-muted-foreground" tabIndex={0}>
           The experience of social isolation in primates and studies on the effects of prolonged loneliness in humans emphasize the profound impact of social deprivation on mental well-being.<br /> These research findings highlight the crucial importance of social connection for our psychological health.
 
@@ -80,7 +87,7 @@ const ArticlePage = () => {
          </ol>
 
           <Image
-            width={200}
+            width={500}
             height={340}
             alt="Visual representation of the impact of social isolation on mental well-being."
             className=" h-64 w-full rounded-lg object-cover dark:contrast-200"
@@ -96,36 +103,22 @@ const ArticlePage = () => {
 
 
       <section className="container grid items-center gap-6 pb-8  md:py-10">
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Why is social connection crucial for mental health?</AccordionTrigger>
-            <AccordionContent >
-              <span tabIndex={0}>
-              Social connection is vital for mental health as it fulfills fundamental human needs for belonging, support, and understanding.<br /> It contributes to emotional well-being and provides a buffer against loneliness and depression.
-                       </span>
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>How can cognitive biases related to solitude be addressed?</AccordionTrigger>
-            <AccordionContent>
-              <span tabIndex={0}>
-              Cognitive biases related to solitude can be addressed through awareness and cognitive skill development.<br /> Recognizing negative thinking patterns and consciously reframing thoughts can help mitigate their impact.
-              </span>
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger>How can technology be used positively to combat loneliness?</AccordionTrigger>
-            <AccordionContent>
-              <span tabIndex={0}>
-              Technology can be used positively by intentionally engaging in meaningful interactions on social media, organizing virtual meetups, and fostering authentic connections.<br /> It becomes a tool for maintaining social ties rather than a source of isolation.
-              </span>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+        <h2 className="mb-4 text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl" tabIndex={0}>FAQ</h2>
+        <AccordionCustom />
       </section>
 
       <section>
         <DataTableDemo />
+      </section>
+
+
+      <section className='mb-7 flex flex-1'>
+      <Link
+        className="m-auto my-2 inline-block rounded-lg border-0 bg-pink-700 px-12 py-2 text-center text-base text-white transition hover:bg-pink-800"
+        href="/essai-ferhat.pdf" target="_blank"
+        title="Open PDF document in a new tab">
+            Save my article as pdf
+          </Link>
       </section>
 
 

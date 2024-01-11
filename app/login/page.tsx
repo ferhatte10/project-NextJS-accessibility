@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: "Login",
     template: `%s - steel`,
   },
-  description: "little description",
+  description: "Welcome back to our website, login to get more infos",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -30,19 +30,17 @@ const LoginPage = () => {
         {/* Left part: Form */}
         <div className="flex w-full flex-col items-center justify-center lg:w-1/2">
           <LoginForm />
-          <div className="mt-4 text-center text-sm text-gray-500">
-            © Redeemer 2023-2024 All Rights Reserved
-          </div>
         </div>
         {/* Right part: Image */}
         <div className="relative hidden w-1/2 lg:block" style={{ height: '100vh' }}>
           <Image
             src="/inspiring-login.jpg"
-            alt="Inspiring Login"
+            alt="Inspiring Login photo, stay calm and ready for the updates"
             width={1000}
             height={1000}
             className="absolute inset-0 h-full w-full object-cover"
             style={{ objectPosition: 'center center' }}
+            role="presentation"
           />
           {/* Conditionally render ThemeToggle based on showThemeSwitcher prop */}
           {showThemeSwitcher && (

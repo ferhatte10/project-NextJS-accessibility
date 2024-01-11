@@ -1,28 +1,37 @@
-// pages/hello.tsx
-'use client'
-import  {DataTableDemo} from '@/components/specials/TableDataSet';
-import { Separator } from '@/components/ui/separator';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-
 import React from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import PdfViewer from '@/components/specials/PdfViewer';
+import { Metadata } from 'next';
+import Head from 'next/head';
+import AccordionCustom from '@/components/specials/AcordionZak';
+import DemoPaymentMethod from '@/components/forms/Payment';
+
+export const metadata: Metadata = {
+  title: {
+    default: "quit smoking",
+    template: `%s - steel`,
+  },
+  description: "Quick tips to get rid of smoking",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+}
+
+
+
 
 const ArticlePage = () => {
   return (
     <article className="container">
 
-      <section className="flex flex-col items-center px-8 py-36 sm:flex-row-reverse sm:px-12">
+      <section className="flex flex-col items-center px-8 py-20 sm:flex-row-reverse sm:px-12">
         <Image
-          width={200}
-          height={200}
+          width={500}
+          height={500}
           alt="Absolutely no smoking."
           className="mb-8 w-full rounded-lg sm:mb-0 sm:ml-4 sm:w-1/2 dark:contrast-200"
           src="/no-smoke.jpeg"
@@ -40,9 +49,10 @@ const ArticlePage = () => {
           </p>
           <Link
             className=" inline-block rounded-lg border-0 bg-pink-700 px-12 py-2 text-base text-white transition hover:bg-pink-800"
-            href="#call-action"
+            href="/login"
+            title="Join 50% discount"
           >
-            Join our program
+            Join us right now
           </Link>
         </div>
       </section>
@@ -50,13 +60,13 @@ const ArticlePage = () => {
       <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
         <div className="flex flex-col items-start gap-2">
           <h2 className="mb-4 text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl" tabIndex={0}>Introduction</h2>
-          <p className="text-lg text-muted-foreground" tabIndex={0}>
+          <p className="text-lg" tabIndex={0}>
           Smoking is a deeply ingrained habit that affects millions worldwide, posing severe health risks and
           addictive challenges. This comprehensive guide aims to outline effective strategies to help
           individuals quit smoking and embark on a journey toward a healthier lifestyle.
           </p>
           <Image
-            width={200}
+            width={500}
             height={340}
             alt="Absolutely no smoking.."
             className="mb-8 h-64 w-full rounded-lg object-cover dark:contrast-200"
@@ -69,11 +79,11 @@ const ArticlePage = () => {
 
       <section className="container mx-auto flex flex-col items-center gap-10  sm:flex-row-reverse sm:px-0">
 
-        <div className="mr-4 w-full text-center sm:w-1/2 sm:text-left flex flex-col h-full">
+        <div className="mr-4 flex h-full w-full flex-col text-center sm:w-1/2 sm:text-left">
           <h2 tabIndex={0} className="dark:text-dark-50 mb-4 text-3xl font-bold leading-tight md:text-4xl">
             Preparation Stage
           </h2>
-          <p className="mb-8 text-left text-lg text-muted-foreground" tabIndex={0}>
+          <p className="mb-8 text-left text-lg" tabIndex={0}>
             Before embarking on the journey to quit smoking, it&apos;s essential to prepare both mentally and practically.
             <br /> The Preparation Stage lays the foundation for a successful quit attempt.
             <br /> First and foremost, setting a quit date acts as a commitment and a starting point for this journey. It provides a tangible goal and allows time for mental preparation.
@@ -84,10 +94,10 @@ const ArticlePage = () => {
         </div>
 
         <Image
-          width={200}
-          height={200}
+          width={500}
+          height={500}
           alt="Absolutely no smoking..."
-          className="mb-8 w-full h-full rounded-lg object-cover sm:mb-0 sm:ml-4 sm:w-1/2 dark:contrast-200"
+          className="mb-8 h-full w-full rounded-lg object-cover sm:mb-0 sm:ml-4 sm:w-1/2 dark:contrast-200"
           src="/no-smoke.jpeg"
           tabIndex={0}
         />
@@ -98,11 +108,11 @@ const ArticlePage = () => {
         <div className="flex flex-col items-start gap-2">
           <h2 id="preparationTitle" className="sr-only">Preparation Steps</h2>
 
-          <p className="text-lg text-muted-foreground" tabIndex={0}>
+          <p className="text-lg " tabIndex={0}>
             Follow these steps to prepare for your journey to quit smoking:
           </p>
 
-          <ol className="list-decimal" aria-describedby="preparationTitle">
+          <ol className="text-md list-decimal" aria-describedby="preparationTitle">
             <li tabIndex={0}>Set a Quit Date: Choose a specific date to quit smoking; it&apos;s a commitment and a starting point for your journey.</li>
             <li tabIndex={0}>Identify Triggers and Habits: Recognize situations, emotions, or routines that prompt smoking behavior; understand these triggers to devise strategies.</li>
             <li tabIndex={0}>Build a Support System: Seek support from family, friends, or join support groups; having understanding and encouraging people makes a significant difference.</li>
@@ -115,7 +125,7 @@ const ArticlePage = () => {
 
 
           <Image
-            width={200}
+            width={500}
             height={340}
             alt="Absolutely no smoking"
             className="mb-8 h-64 w-full rounded-lg object-cover dark:contrast-200"
@@ -128,46 +138,27 @@ const ArticlePage = () => {
 
 
       <section className="container grid items-center gap-6 pb-8  md:py-10">
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>How does smoking affect health?</AccordionTrigger>
-            <AccordionContent >
-              <span tabIndex={0}>
-                Smoking is harmful to health and can lead to various diseases, including lung cancer and heart disease. It is a major cause of preventable deaths worldwide.
-              </span>
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>Can quitting smoking improve health?</AccordionTrigger>
-            <AccordionContent>
-              <span tabIndex={0}>
-              Absolutely. Quitting smoking has numerous health benefits, such as reducing the risk of diseases, improving lung function, and enhancing overall well-being.
-              </span>
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger>Are there resources to help quit smoking?</AccordionTrigger>
-            <AccordionContent>
-              <span tabIndex={0}>
-              Yes. Many resources, including support groups, counseling, and medication, can assist in the quitting process. Consult with healthcare professionals for personalized guidance.
-              </span>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+      <h2 className="mb-4 text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl" tabIndex={0}>FAQ</h2>
+        <AccordionCustom/>
       </section>
 
       <section>
-        <PdfViewer pdfUrl='/essai-abir.pdf'></PdfViewer>
+        <DemoPaymentMethod/>
       </section>
 
-      <section>
-        {/* <TextareaForm /> */}
+
+      <section className='mb-7 flex flex-1'>
+      <Link
+        className="m-auto my-2 inline-block rounded-lg border-0 bg-pink-700 px-12 py-2 text-center text-base text-white transition hover:bg-pink-800"
+        href="/essai-ferhat.pdf" target="_blank"
+        title="open the PDF document"
+        >
+            Save my article as pdf
+          </Link>
       </section>
 
-      <section>
-        <DataTableDemo />
-        <Separator />
-      </section>
+
+
   </article>
   );
 };

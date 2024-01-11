@@ -22,11 +22,11 @@ import Cardy from '@/components/specials/Card'
 const HelloWorldPage = () => {
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <FlexCards/>
+
 
     <div className="flex max-w-[980px] flex-col items-start gap-2">
-      <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">Welcome back Redeemer!</h1>
-      <p className="max-w-[700px] text-lg text-muted-foreground">
+      <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl" aria-labelledby='wlcm-redeemer' tabIndex={0}>Welcome back Redeemer!</h1>
+      <p id="wlcm-redeemer" className="max-w-[700px] text-lg text-muted-foreground">
       Please select the option that you are looking for
       </p>
     </div>
@@ -34,8 +34,8 @@ const HelloWorldPage = () => {
 
     <div className="flex justify-between  gap-3">
       <Cardy title="Quit<br/>Smoking" href="/dashboard/quit-smoking" icon={<Icons.quitSmoking className="mb-3 h-6 w-6" />} />
-      <Cardy title="Relieve<br/>Stress" href="/dashboard/quit-smoking" icon={<Icons.relieveStress className="mb-3 h-6 w-6" />} />
-      <Cardy title="Improve<br/>Sleep" href="/dashboard/quit-smoking" icon={<Icons.improveSleep className="mb-3 h-6 w-6" />} />
+      <Cardy title="Build<br/>Reputation" href="/dashboard/power-reputation-strategies" icon={<Icons.relieveStress className="mb-3 h-6 w-6" />} />
+      <Cardy title="Relieve<br/>Solitude" href="/dashboard/navigating-through-solitude" icon={<Icons.improveSleep className="mb-3 h-6 w-6" />} />
     </div>
 
 

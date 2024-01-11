@@ -18,16 +18,20 @@ export const siteConfig = {
           href: "/dashboard/quit-smoking",
         },
         {
-          title: "SubItem 2",
-          href: "/subitem-2",
+          title: "Building Reputation",
+          href: "/dashboard/power-reputation-strategies",
+        },
+        {
+          title: "Fixing solitude",
+          href: "/dashboard/navigating-through-solitude",
         },
         // Add more subitems as needed
       ],
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    twitter: "/dashboard1",
+    github: "/dashboard2",
+    docs: "/dashboard3",
   },
 }
