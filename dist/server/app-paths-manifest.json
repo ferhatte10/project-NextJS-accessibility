@@ -1,6 +1,5 @@
 {
   "/page": "app/page.js",
-  "/not-found": "app/not-found.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/dashboard/quit-smoking/page": "app/dashboard/quit-smoking/page.js",
   "/dashboard/navigating-through-solitude/page": "app/dashboard/navigating-through-solitude/page.js",
