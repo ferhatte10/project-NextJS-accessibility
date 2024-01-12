@@ -150,7 +150,7 @@ const ArticlePage = () => {
       <section className='mb-7 flex flex-1'>
       <Link
         className="m-auto my-2 inline-block rounded-lg border-0 bg-pink-700 px-12 py-2 text-center text-base text-white transition hover:bg-pink-800"
-        href="/essai-ferhat.pdf" target="_blank"
+        href="/essai-zakaria.pdf" target="_blank"
         title="open the PDF document"
         >
             Save my article as pdf
